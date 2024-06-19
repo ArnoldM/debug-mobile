@@ -1,0 +1,10 @@
+<ion-button (click)="this.submit.emit($event)"
+            [disabled]="state() === 'disabled'">
+  @if (state() === 'submitting') {
+    <ion-spinner [name]="iconName()"></ion-spinner>
+  } @else {
+    <ion-icon slot="start" [name]="iconName()"></ion-icon>
+  }
+  {{ label() }}
+</ion-button>
+

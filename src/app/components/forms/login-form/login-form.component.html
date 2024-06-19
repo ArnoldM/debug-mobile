@@ -1,0 +1,27 @@
+<form [formGroup]="form" class="ion-padding">
+  <ion-input data-testid="emailInput"
+             formControlName="email"
+             error-text="Invalid Email"
+             helper-text="Enter your email"
+             type="email">
+    <div slot="label">
+      Email
+      <ion-text color="danger">*</ion-text>
+    </div>
+  </ion-input>
+  <ion-input data-testid="passwordInput"
+             type="password"
+             helperText="Enter your password"
+             formControlName="password"
+             error-text="Password is mandatory"
+             helper-text="Enter your password">
+    <div slot="label">
+      Password
+      <ion-text color="danger">*</ion-text>
+    </div>
+    <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+  </ion-input>
+  <div class="ion-text-end">
+    <app-submit-button [state]="state()" (submit)="onSubmit()" data-testid="submitButton"></app-submit-button>
+  </div>
+</form>
